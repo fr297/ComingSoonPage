@@ -1,0 +1,518 @@
+/* Reset & Defaults */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "ProbaPro", sans-serif;
+}
+
+.bodyBG {
+  background-image: image-set(
+    url("./images/background.webp") 1x,
+    url("./images/backgroundRetina.webp") 2x
+  );
+  background-size: cover;
+  background-position: 25% 50%;
+  background-repeat: no-repeat;
+}
+
+/* Layout */
+.container {
+  width: 95%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 25px;
+  font-size: 18px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  transition: all 1s ease;
+}
+
+.logo:hover .computerLight,
+.logo:focus-visible .computerLight {
+  -webkit-animation: blink-1 0.6s both;
+  animation: blink-1 0.6s both;
+}
+
+.email-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 18px 12px 48px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #484747;
+  background-color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.email-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  width: 20px;
+  height: 20px;
+  background: url("./images/letter.svg") no-repeat center center;
+  background-size: contain;
+  transform: translateY(-50%);
+}
+
+.email-link:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  padding-bottom: 60px;
+}
+
+.hero-title {
+  margin-top: calc(15vh - 20px);
+  margin-bottom: 20px;
+  font-size: 45px;
+  font-weight: 600;
+  color: #000;
+  line-height: 1.2;
+}
+
+.highlightGreen {
+  color: #618135;
+}
+
+.highlightBlue {
+  color: #32477c;
+}
+
+.highlighBlack {
+  color: #000;
+}
+
+.hero-subtitle {
+  margin: 0 0 45px 0;
+  font-size: 22px;
+  color: #717070;
+  font-weight: 400;
+}
+
+.hero-subtitle .highlightGreen {
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #717070;
+  margin-bottom: 20px;
+}
+
+.hero-description .highlightGreen,
+.hero-description .highlightBlue {
+  font-weight: 500;
+}
+
+/* Newsletter Form */
+.newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.newsletter input[type="email"] {
+  width: 320px;
+  height: 64px;
+  padding: 0 25px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: 1px solid #618135;
+  outline: none;
+}
+
+.newsletter input::placeholder {
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+.newsletter button {
+  width: 160px;
+  height: 64px;
+  padding: 12px 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  border-radius: 50px;
+  border: 2px solid #618135;
+  background-color: #618135;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #618135;
+}
+
+button,
+input[type="email"],
+.donate-btn {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+button:hover,
+input[type="email"]:hover,
+.donate-btn:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+/* Donate Block */
+.donate {
+  display: flex;
+  width: 550px;
+  gap: 16px;
+  align-items: center;
+}
+
+.donate img {
+  width: 147px;
+  height: 150px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.donate-content {
+  flex: 1;
+}
+
+.donate-content h4 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.donate-content p {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #717070;
+  line-height: 1.5;
+}
+
+.donate-btn {
+  padding: 5px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  background-color: #618135;
+  color: #f7f5ec;
+  border: 2px solid #618135;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.donate-btn:hover {
+  background-color: #f7f5ec;
+  color: #618135;
+}
+.mobile-donate-btn {
+  padding: 10px 0;
+  width: 60%;
+  text-align: center;
+  font-size: 1rem;
+  color: #618135;
+  border: 2px solid #618135;
+  background-color: transparent;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 35px;
+  transition: all 0.2s ease;
+}
+.mobile-donate-btn:hover {
+  background-color: #618135;
+  color: #f7f5ec;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-bottom: 30px;
+  font-size: 14px;
+  color: #999;
+}
+
+.footer-note {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 0;
+}
+
+.footer-note a {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  text-align: end;
+  transition: all 0.3s ease;
+}
+
+.footer-note a:hover {
+  opacity: 0.7;
+  transition: all 1s ease;
+}
+
+@-webkit-keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Пульсация кнопки Поддержать */
+@keyframes pulseOpacity {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/*  Анимации по классам */
+.fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+.fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+.slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+.pulseOpacity {
+  animation: pulseOpacity 3s ease-in-out infinite;
+}
+
+/* terms page */
+.terms-page {
+  padding: 60px 0;
+  background: url("./images/reviews.png") center 33vh no-repeat;
+  background-size: cover;
+}
+
+.terms-page .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffffcc;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.terms-page .title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.terms-page .section {
+  margin-bottom: 30px;
+  padding: 15px;
+  border-left: 4px solid #618135;
+  background-color: #f9f9f9;
+}
+
+.terms-page .section-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.terms-page .paragraph {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.link {
+  color: #618135;
+}
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Тостовое сообщение */
+.toast {
+  position: relative;
+  min-width: 250px;
+  max-width: 320px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  color: #333;
+  border-left: 6px solid;
+  transform: translateY(-120%);
+  opacity: 0;
+  animation: toastIn 0.5s ease-out forwards;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.toast.success {
+  background-color: #f8f4ec;
+  border-color: #8fb980;
+}
+
+.toast.error {
+  background-color: #f7e9ea;
+  border-color: #d28899;
+}
+
+.toast .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+}
+
+.toast .close-btn:hover {
+  color: #000;
+}
+
+.toast .timeline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: #ccc;
+  animation: shrink linear forwards;
+}
+
+.toast.success .timeline {
+  background-color: #8fb980;
+}
+
+.toast.error .timeline {
+  background-color: #d28899;
+}
+
+@keyframes toastIn {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
