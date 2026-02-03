@@ -30,3 +30,5 @@ GrandSchool offers easy-to-understand online courses that help seniors:
 ## 💙 A Social Impact Project
 
 GrandSchool is built as a social initiative focused on education, safety, and digital inclusion.
+
+<img width="1440" height="810" alt="Grand School Comming Soon Page" src="https://github.com/user-attachments/assets/141fb4d6-3541-44b1-bfc1-47c42a0ad9f9" />
